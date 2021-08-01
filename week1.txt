@@ -1,0 +1,294 @@
+Assignment 1
+
+
+#Git & GitHub
+
+
+2.
+
+● Git status
+Command we could use to check the state of working directory and staging area.
+We can use git status to check whether the changes are tracked by Git.
+
+● Git Add
+Command lets Git track the changes of the working directory.
+We could use the git add to include the changes we want to make in the next commit.
+
+● Git commit
+It allows us to save changes to the local repo, which works as a snapshots of the project at specific point of time.
+
+● Git log
+It provides an overview of changes that have been made to the commit.
+We could use it to check the changes we have made through the command.
+
+● Git push [ Repo_name ] [ Branch_name ]
+It lets us create a remote with our local copy.
+
+● Git remote -v
+The command lists all the remotes related to current repo.
+
+● Git Branch
+Command we could use to manage branches of repo.
+It allows us to create, rename, and delete branches.
+
+● fork
+It is a copy of a repo.
+We could fork a repo and make changes such as fixing bugs or making improvements freely without changing the original repo.
+
+3.
+
+Take my attempt to create repo for this assignment as an example, the steps are listed as follows.
+First, I need to create a local repo.
+> mkdir appworksDean (to create a new directory)
+> git init (to create new repo within the appworksDean directory, which will be our local repo)
+
+Then, I need to create a remote with GitHub.
+GitHub will provide https URL: https://github.com/PCChuang/appworksDean.git
+The URL will be used when creating remote back in the terminal.
+> git remote add origin https://github.com/PCChuang/appworksDean.git (new remote will be created)
+
+The last is to upload the repo.
+> git push --set-upstream origin master
+
+And enter my username and password in terminal.
+Them I can see and upload projects to GitHub.
+
+
+#Basics
+
+
+1.
+
+let Pi = 3.14
+Let is being used here is Pi is a mathematical constant, with a value that won't change. Data type should be Double.
+
+2.
+
+let x = 10
+let y = 10
+let average = (x + y) / 2
+
+3.
+
+● change the data type of average into Double
+let average = Double((x + y) / 2)
+
+● The difference is that Swift will infer (10 / 3) as Int while (10.0 / 3.0) as Double.
+
+4.
+
+var flag : Bool = true
+var inputString = String("Hello world.")
+let bitsInBite = Int(8)
+let averageScore = Double(86.8)
+
+5.
+
+var salary = 22000
+salary += 28000
+
+6.
+
+Equality operator in Swift is ==.
+
+7.
+
+The remainder is 1.
+
+let x = 10
+let y = 3
+let remainder = 10 % 3
+
+8.
+
+let creates a constant that won't be changed, while var creates a variable value.
+
+9.
+
+- use camel case
+- prefer to use constants with let as much as possible, and only use var when there is variable we need to change later on
+- use instance variables to keep certain value around from one action of events to the next, while use local variables for temporary storage
+
+10.
+
+Type Inference figures out the type of data based on the initial value we provide.
+
+11.
+
+With the value we assign to phoneNumber, Swift infers that we want the variable to be an Int.
+And we cannot assign value of type String to type Int.
+
+
+#Collection
+
+
+1. 
+
+var myFriends: [String] = []
+
+2.
+
+myFriends += ["Ian", "Bomi", "Kevin"]
+
+3.
+
+myFriends.append("Michael")
+
+4.
+
+myFriends.swapAt(0, 2)
+
+5.
+
+for i in myFriends{
+    print(i)
+}
+
+6.
+
+There is no index 5 in MyFriends array, for the index is out of range.
+
+7.
+
+myFriends.first
+
+8.
+
+myFriends.last
+
+9.
+
+var myCountryNumber: [String: Int] = [ : ]
+
+10.
+
+myCountryNumber["US"] = 1
+myCountryNumber["GB"] = 44
+myCountryNumber["JP"] = 81
+
+11.
+
+myCountryNumber.updateValue(0, forKey: "GB")
+
+12.
+
+var emptyDictionary: ["key" : "value"] = [ : ]
+
+13.
+
+use .removeValue(forKey: )
+
+
+# Control Flow
+
+
+1.
+
+for i in lottoNumbers.count - 3 ..< lottoNumbers.count {
+    print("\(lottoNumbers[i])")
+}
+
+2.
+
+var count = 5
+
+for _ in count...10 {
+    print(count)
+    count += 1
+}
+
+var count = 10
+
+for _ in 0...count {
+    print(count)
+    count -= 2
+    if count < 5 {
+        break
+    }
+}
+
+
+3.
+
+var count = 5
+while count <= 10 {
+    print(count)
+    count += 1
+}
+
+var count = 10
+while count > 5 {
+    print(count)
+    count -= 2
+}
+
+4. 
+
+var count = 5
+repeat {
+    print(count)
+    count += 1
+} while count <= 10
+
+var count = 10
+repeat {
+    print(count)
+    count -= 2
+} while count >= 5
+
+5.
+
+The difference between while and repeat-while is knowing when the condition is checked.
+- while loop checks the condition before the loop code.
+- repeat-while checks the condition after then.
+
+6.
+
+if isRaining == true {
+    print("It's raining, I don't want to work today.")
+} else {
+    print("Although it's sunny, I still don't want to work today.")
+}
+
+7.
+
+var jobLevel = 0
+switch jobLevel {
+case 1:
+    print("Member")
+case 2:
+    print("Team Leader")
+case 3:
+    print("Manager")
+case 4:
+    print("Director")
+default:
+    print("We don't have this job")
+}
+
+
+# Function
+
+
+1.
+
+func greet (name: String) {
+    "Hello, \(name)"
+}
+
+2.
+
+func multiply (a: Int, b: Int = 10) {
+    print(a * b)
+}
+
+3.
+
+Parameter name is used in the implementation of the function.
+Argument label is used when calling a function.
+When we call a function, we provide values as arguments for function's parameters.
+
+4.
+
+● String
+● Double
