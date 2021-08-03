@@ -75,12 +75,12 @@ let average = Double((x + y) / 2)
 
 ● The difference is that Swift will infer (10 / 3) as Int while (10.0 / 3.0) as Double.
 
-4.
+4. (modified)
 
-var flag : Bool = true
-var inputString = String("Hello world.")
-let bitsInBite = Int(8)
-let averageScore = Double(86.8)
+var flag: Bool = true
+var inputString: String = "Hello world."
+let bitsInBite: Int = 8
+let averageScore: Double = 86.8
 
 5.
 
@@ -188,53 +188,54 @@ for i in lottoNumbers.count - 3 ..< lottoNumbers.count {
     print("\(lottoNumbers[i])")
 }
 
-2.
+2. (modified)
 
-var count = 5
-
-for _ in count...10 {
-    print(count)
-    count += 1
+for i in lottoNumbers.reversed() {
+    print(i)
 }
 
-var count = 10
+for i in lottoNumbers where i % 2 == 0 {
+    print(i)
+}
 
-for _ in 0...count {
-    print(count)
-    count -= 2
-    if count < 5 {
+
+3. (modified)
+
+var i = 0
+
+while i < lottoNumbers.count {
+    let number = lottoNumbers.reversed()[i]
+    print(number)
+    i += 1
+}
+
+while i - 1 < lottoNumbers.count {
+    let number = lottoNumbers.reversed()[i - 1]
+    print(number)
+    i -= 2
+    if i < 1 {
         break
     }
 }
 
+4. (modified)
 
-3.
+var i = 0
 
-var count = 5
-while count <= 10 {
-    print(count)
-    count += 1
-}
-
-var count = 10
-while count > 5 {
-    print(count)
-    count -= 2
-}
-
-4. 
-
-var count = 5
 repeat {
-    print(count)
-    count += 1
-} while count <= 10
+    let number = lottoNumbers.reversed()[i]
+    print(number)
+    i += 1
+} while i < lottoNumbers.count
 
-var count = 10
 repeat {
-    print(count)
-    count -= 2
-} while count >= 5
+    let number = lottoNumbers.reversed()[i - 1]
+    print(number)
+    i -= 2
+    if i < 1 {
+        break
+    }
+} while i - 1 < lottoNumbers.count
 
 5.
 
@@ -270,10 +271,10 @@ default:
 # Function
 
 
-1.
+1. (modified)
 
-func greet (name: String) {
-    "Hello, \(name)"
+func greet (person name: String) -> String {
+    "Hello, " + name
 }
 
 2.
