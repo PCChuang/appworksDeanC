@@ -1,11 +1,17 @@
 // Object-Oriented Swift
 
 // 1.2.3.
+
+enum Gender {
+    case male
+    case female
+    case undefined
+}
+
 class Animal {
-    enum Gender {
-        case male
-        case female
-        case undefined
+    var gender: Gender
+    init(gender: Gender) {
+        self.gender = gender
     }
     func eat() {
         print("I eat everything!")
@@ -37,11 +43,11 @@ class Zoo {
     }
 }
 
-let tiger = Tiger()
-let elephant = Elephant()
-let horse = Horse()
+let tiger = Tiger(gender: .male)
+let elephant = Elephant(gender: .male)
+let horse = Horse(gender: .male)
 
-let zoo = Zoo(weeklyHot: Tiger())
+let zoo = Zoo(weeklyHot: Tiger(gender: .male))
 
 
 zoo.weeklyHot = tiger
@@ -87,8 +93,8 @@ enum Gasoline: String {
     case oil98 = "98"
     case diesel = "diesel"
 
-    func getPrice(for gasoline: Gasoline) -> Double {
-        switch gasoline {
+    func getPrice() -> Double {
+        switch self {
         case .oil92:
             return 28.7
         case .oil95:
@@ -101,6 +107,7 @@ enum Gasoline: String {
     }
 }
 
+Gasoline.oil95.getPrice()
 Gasoline.diesel.rawValue
 
 /*
@@ -177,17 +184,16 @@ enum GuessNumberGameError: Error {
 class GuessNumerGame {
     var targetNumber = 10
     func guess(number: Int) throws {
-        do {
-            guard number == targetNumber else {
-                throw GuessNumberGameError.wrongNumber
-            }
+        guard number == targetNumber else {
+            throw GuessNumberGameError.wrongNumber
         }
-        catch {
-            print("Guess the right number: \(targetNumber)")
-        }
+        print("Guess the right number: \(targetNumber)")
     }
 }
 
-try GuessNumerGame().guess(number:20)
-
-
+do {
+    try GuessNumerGame().guess(number:20)
+}
+catch GuessNumberGameError.wrongNumber {
+    print("Guess the wrong number")
+}

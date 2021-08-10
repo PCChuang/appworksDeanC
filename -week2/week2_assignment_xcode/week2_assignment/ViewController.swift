@@ -44,6 +44,7 @@ class ViewController: UIViewController {
         
         view.backgroundColor = randomBackgorundColor
         
+        sender.setTitleColor(randomBackgorundColor, for: .normal)
         }
     
     override func viewDidLoad() {
